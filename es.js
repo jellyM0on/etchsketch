@@ -11,3 +11,23 @@ for (i=1; i <= 16; i++) {
         childDiv.classList.add("childStyle");
     }
 }   
+
+const childDiv = document.querySelectorAll(".childStyle");
+childDiv.forEach((div) => 
+    div.addEventListener("mouseover", () => {
+        div.classList.add("hoverStyle");
+    })
+)
+childDiv.forEach((div) => 
+    div.addEventListener("mouseout", () => {
+        div.classList.remove("hoverStyle");
+    })
+) 
+    
+    
+    
+    childDiv.addEventListener("mouseover", () => {
+    childDiv.classList.add("hoverStyle");
+});
+
+
