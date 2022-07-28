@@ -11,12 +11,11 @@
     }
     
     .childStyle {
+        border-width: 1px;
+        height: var(--gridHeight, 16px);
+        width: var(--gridWidth,16px);
         border-color: black;
         border-style: solid;
-        border-width: 1px;
-        height: 16px;
-        width: 16px;
-
     }
 
     .parent {
@@ -26,6 +25,7 @@
         border-style: solid;
         align-items: center;
         width:fit-content;
+        margin-top: 20px;
         
     }
 
@@ -43,7 +43,11 @@
 
 
     .hoverStyle {
-        background-color: orange;
+        background-color: black;
+    }
+
+    .clickStyle {
+        background-color: black;
     }
    
 </style>
@@ -52,6 +56,8 @@
 <body>
     <div class= outer>
         <h1 class= text>Etch a Sketch</h1>
+        <button class= buttonPad>Enter Sketchpad Size</button>
+        <button class= buttonGird>Enter Grid Size</button>
         <div class = parent> </div>
     </div>
 </body>
