@@ -10,10 +10,15 @@
         
     }
     
+    :root {
+        --grid-height: 16px ;
+        --grid-width: 16px ;
+
+    }
     .childStyle {
         border-width: 1px;
-        height: var(--gridHeight, 16px);
-        width: var(--gridWidth,16px);
+        height: var(--grid-height);
+        width: var(--grid-width);
         border-color: black;
         border-style: solid;
     }
@@ -54,11 +59,12 @@
 </head>
 
 <body>
-    <div class= outer>
-        <h1 class= text>Etch a Sketch</h1>
-        <button class= buttonPad>Enter Sketchpad Size</button>
-        <button class= buttonGird>Enter Grid Size</button>
-        <div class = parent> </div>
+    <div class= "outer">
+        <h1 class= "text">Etch a Sketch</h1>
+        <button class= "buttonPad">Enter Sketchpad Size</button>
+        <button class= "buttonGrid">Enter Grid Size</button>
+        <button class = "buttonLock">Lock Sketchpad</button>
+        <div class = "parent"> </div>
     </div>
 </body>
 </html>
