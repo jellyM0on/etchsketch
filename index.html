@@ -7,12 +7,18 @@
 <style>
     .divStyle {
         display: flex;
-        
+        width: var(--default-width-container);
+        height: var(--default-grid-height); 
     }
     
     :root {
-        --grid-height: 16px ;
-        --grid-width: 16px ;
+        --grid-height: 20px;
+        --grid-width: 20px;
+        --default-grid-height: ; 
+        --default-grid-width: ; 
+        --default-height-container: ; 
+        --default-width-container: ; 
+
 
     }
     .childStyle {
@@ -29,6 +35,7 @@
         border-color: pink;
         border-style: solid;
         align-items: center;
+        height: var(--default-height-container); 
         width:fit-content;
         margin-top: 20px;
         

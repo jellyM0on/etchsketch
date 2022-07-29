@@ -3,7 +3,7 @@ const pDiv = document.querySelector(".parent");
 startSketch(); 
 
 /*generate sketchpad and listeners */
-function startSketch(width=16, height=16) {
+function startSketch(width=10, height=10) {
 for (i=1; i <= height; i++) {
         const setDiv = document.createElement("div"); 
         pDiv.appendChild(setDiv);
@@ -16,6 +16,11 @@ for (i=1; i <= height; i++) {
     } 
     loadListeners();  
 }
+
+const divStyle = document.querySelectorAll(".divStyle")
+
+
+
 function loadListeners() {
 const childDiv = document.querySelectorAll(".childStyle");
 childDiv.forEach((div) => 
@@ -52,8 +57,6 @@ buttonPad.addEventListener("click", () => {
         heightSketch = prompt("Number cannot be more than 100 or 0.\ Enter width size: ");
     }
     changeSketch(widthSketch, heightSketch); 
-    /* add here*/
-    lockSketch(); 
 }); 
 
 function changeSketch(width, height) {
@@ -78,22 +81,49 @@ function changeGrid(size) {
     console.log(size); 
 }
 
-const buttonLock = document.querySelector(".buttonLock"); 
+
+const buttonLock = document.querySelector(".buttonLock");
+buttonLock.addEventListener("click", () => {
+    defaultSketch()}); 
+
+function defaultSketch() {
+    document.documentElement.style.setProperty("--default-grid-height", "100%");
+    document.documentElement.style.setProperty("--default-grid-width", "100%");
+    document.documentElement.style.setProperty("--default-height-container", "500px");
+    document.documentElement.style.setProperty("--default-width-container", "500px");
+    document.documentElement.style.setProperty("--grid-height", "100%");
+    document.documentElement.style.setProperty("--grid-width", "100%");
+
+   } 
 
 
-function lockSkech() {
 
-}
+
+
+
+
 
 /*function changeGrid(size) {
 const childDiv = document.querySelectorAll(".childStyle");
     childDiv.forEach((div) => childDiv.setAttribute("style, ))
 childDiv.forEach((div) => div.setAttribute("style", `height: ${size}`, `width: ${size}`))
 
+pDiv.classList.add(".lockStyleParent");
+
+
+
+
+
 }*/
 
+/* 
+set specific widthxheight
+flex box grid section
 
 
 
-/*change grid size
+*/
+
+
+/*lock pixel space 
 change color */
