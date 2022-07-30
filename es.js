@@ -101,29 +101,3 @@ function defaultSketch() {
 
 
 
-
-
-/*function changeGrid(size) {
-const childDiv = document.querySelectorAll(".childStyle");
-    childDiv.forEach((div) => childDiv.setAttribute("style, ))
-childDiv.forEach((div) => div.setAttribute("style", `height: ${size}`, `width: ${size}`))
-
-pDiv.classList.add(".lockStyleParent");
-
-
-
-
-
-}*/
-
-/* 
-set specific widthxheight
-flex box grid section
-
-
-
-*/
-
-
-/*lock pixel space 
-change color */
