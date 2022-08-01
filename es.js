@@ -1,8 +1,13 @@
 const pDiv = document.querySelector(".parent");
 
-startSketch(); 
 
+function loadPage() {
+generateGrids();
+startSketch(); 
+}
 /*generate sketchpad and listeners */
+
+
 function startSketch(width=10, height=10) {
 for (i=1; i <= height; i++) {
         const setDiv = document.createElement("div"); 
@@ -96,6 +101,24 @@ function defaultSketch() {
 
    } 
 
+
+
+const colorSection = document.querySelector(".colorSection");
+const colorArray = ["red", "green", "blue", "yellow", "orange", "pink", "purple", "black", "white"];
+function generateGrids(){
+    for (i=0; i <= 8; i++) {
+        const setDiv = document.createElement("div"); 
+        colorSection.appendChild(setDiv);
+        setDiv.classList.add("colorStylediv");
+        setDiv.style.cssText = `background-color: ${colorArray[i]}`;
+    } 
+}
+
+
+        
+
+
+loadPage(); 
 
 
 

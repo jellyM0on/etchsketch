@@ -29,6 +29,17 @@
         border-style: solid;
     }
 
+    .colorStylediv {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        height: 10px; 
+        width: 150px;
+       
+
+    }
+
+
     .parent {
         display: flex;
         flex-direction: column;
@@ -65,7 +76,21 @@
         flex-direction: column;
     }
 
+    .colorSection {
+        margin-top: 20px;
+    }
+    .colorGridStyle {
+        display: flex; 
 
+    }
+
+    .buttonSketch {
+        display: none;
+    }
+
+    .buttonLock {
+        display: hidden; 
+    }
 
 
     .hoverStyle {
@@ -85,14 +110,14 @@
         <div class = "gameSection">
             <div class = "featuresSection">
                 <div class = "buttonSection">
-                    <button class= "buttonPad">Enter Sketchpad Size</button>
-                    <button class= "buttonGrid">Enter Grid Size</button>
+                    <button class= "buttonPad">Adjust Grid Number</button>
+                    <button class= "buttonGrid">Adjust Grid Size</button>
+                    <button class= "buttonSketch">Adjust Sketchpad Size</button>
                 </div>
-                <div class = "colorSection">
-                </div>
+                <div class = "colorSection"></div>
             </div>
             <div class = "sketchSection">
-                <button class = "buttonLock">Lock Sketchpad</button>
+                <button class = "buttonLock">Click to Enter Locked Mode</button>
                 <div class = "parent"> </div>
             </div>
             </div>
