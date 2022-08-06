@@ -91,8 +91,22 @@ const buttonLock = document.querySelector(".buttonLock");
 buttonLock.addEventListener("click", () => { 
     defaultSketch();
     buttonGrid.setAttribute("style", "display: none");
-
+    buttonUnlock.setAttribute("style", "display: initial")
     buttonLock.setAttribute("style", "display: none");
+}); 
+
+buttonUnlock.addEventListener("click", () => { 
+    buttonGrid.setAttribute("style", "display: initial");
+    buttonUnlock.setAttribute("style", "display: none")
+    buttonLock.setAttribute("style", "display: initial");
+    document.documentElement.style.setProperty("--default-grid-height", "");
+    document.documentElement.style.setProperty("--default-grid-width", "");
+    document.documentElement.style.setProperty("--default-height-container", "");
+    document.documentElement.style.setProperty("--default-width-container", "");
+    document.documentElement.style.setProperty("--grid-height", "20px");
+    document.documentElement.style.setProperty("--grid-width", "20px");
+    changeSketch(); 
+
 }); 
 
 function defaultSketch() {
@@ -134,7 +148,11 @@ function changeColor() {
 // reset button 
 
 const buttonReset = document.querySelector(".buttonReset");
-buttonReset.addEventListener("click", () => changeSketch()); 
+buttonReset.addEventListener("click", () => {
+    changeSketch()
+    if (buttonUnlock.style.display == "none") {
+    changeGrid(20)}}
+    ); 
 
 //
 loadPage(); 
