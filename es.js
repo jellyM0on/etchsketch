@@ -102,20 +102,32 @@ function defaultSketch() {
    } 
 
 
+   // functions for color selection 
 
 const colorSection = document.querySelector(".colorSection");
-const colorArray = ["red", "green", "blue", "yellow", "orange", "pink", "purple", "black", "white"];
+const colorArray = ["red", "green", "blue", "yellow", "orange", "pink", "purple", "black"];
+
 function generateGrids(){
-    for (i=0; i <= 8; i++) {
+    for (i=0; i <= 7; i++) {
         const setDiv = document.createElement("div"); 
         colorSection.appendChild(setDiv);
         setDiv.classList.add("colorStylediv");
+        setDiv.setAttribute("id", `${colorArray[i]}`);
         setDiv.style.cssText = `background-color: ${colorArray[i]}`;
     } 
+    changeColor(); 
 }
 
+function changeColor() {
+    const childDiv = document.querySelectorAll(".childStyle");
+    const colorStyle = document.querySelectorAll(".colorStylediv"); 
+    colorStyle.forEach((grid) => grid.addEventListener("click", () => {
+        let color = grid.getAttribute("id");
+        document.documentElement.style.setProperty("--default-color", color);
+    })
+) 
+}
 
-        
 
 
 loadPage(); 
