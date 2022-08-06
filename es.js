@@ -1,12 +1,11 @@
 const pDiv = document.querySelector(".parent");
 
-
 function loadPage() {
 generateGrids();
 startSketch(); 
 }
-/*generate sketchpad and listeners */
 
+/*generate sketchpad and listeners */
 
 function startSketch(width=10, height=10) {
 for (i=1; i <= height; i++) {
@@ -86,6 +85,8 @@ function changeGrid(size) {
     console.log(size); 
 }
 
+// unlock and lock functions
+
 const buttonUnlock = document.querySelector(".buttonUnlock");
 const buttonLock = document.querySelector(".buttonLock");
 buttonLock.addEventListener("click", () => { 
@@ -99,12 +100,7 @@ buttonUnlock.addEventListener("click", () => {
     buttonGrid.setAttribute("style", "display: initial");
     buttonUnlock.setAttribute("style", "display: none")
     buttonLock.setAttribute("style", "display: initial");
-    document.documentElement.style.setProperty("--default-grid-height", "");
-    document.documentElement.style.setProperty("--default-grid-width", "");
-    document.documentElement.style.setProperty("--default-height-container", "");
-    document.documentElement.style.setProperty("--default-width-container", "");
-    document.documentElement.style.setProperty("--grid-height", "20px");
-    document.documentElement.style.setProperty("--grid-width", "20px");
+    nondefaultSketch();
     changeSketch(); 
 
 }); 
@@ -119,8 +115,17 @@ function defaultSketch() {
 
    };
 
+function nondefaultSketch() {
+    document.documentElement.style.setProperty("--default-grid-height", "");
+    document.documentElement.style.setProperty("--default-grid-width", "");
+    document.documentElement.style.setProperty("--default-height-container", "");
+    document.documentElement.style.setProperty("--default-width-container", "");
+    document.documentElement.style.setProperty("--grid-height", "20px");
+    document.documentElement.style.setProperty("--grid-width", "20px");
+}; 
 
-   // functions for color selection 
+
+// functions for color selection 
 
 const colorSection = document.querySelector(".colorSection");
 const colorArray = ["red", "green", "blue", "yellow", "orange", "pink", "purple", "black"];
@@ -154,7 +159,8 @@ buttonReset.addEventListener("click", () => {
     changeGrid(20)}}
     ); 
 
-//
+//initialize 
+
 loadPage(); 
 
 
