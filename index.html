@@ -77,22 +77,24 @@
         flex-direction: column;
     }
 
+    .featureSection {
+        justify-content: center;
+    }
+
     .colorSection {
         margin-top: 20px;
+        margin-bottom: 20px;
     }
     .colorGridStyle {
         display: flex; 
 
     }
 
-    .buttonSketch {
-        display: none;
+    .removeButton,
+    .buttonUnlock {
+        display: none; 
     }
-
-    .buttonLock {
-        display: hidden; 
-    }
-
+    
 
     .hoverStyle {
         background-color: var(--default-color); 
@@ -113,12 +115,13 @@
                 <div class = "buttonSection">
                     <button class= "buttonPad">Adjust Grid Number</button>
                     <button class= "buttonGrid">Adjust Grid Size</button>
-                    <button class= "buttonSketch">Adjust Sketchpad Size</button>
                 </div>
                 <div class = "colorSection"></div>
+                <button class = "buttonReset">Reset Pad</button>
             </div>
             <div class = "sketchSection">
                 <button class = "buttonLock">Click to Enter Locked Mode</button>
+                <button class = "buttonUnlock">Click to Enter Unlocked Mode</button>
                 <div class = "parent"> </div>
             </div>
             </div>

@@ -86,10 +86,14 @@ function changeGrid(size) {
     console.log(size); 
 }
 
-
+const buttonUnlock = document.querySelector(".buttonUnlock");
 const buttonLock = document.querySelector(".buttonLock");
-buttonLock.addEventListener("click", () => {
-    defaultSketch()}); 
+buttonLock.addEventListener("click", () => { 
+    defaultSketch();
+    buttonGrid.setAttribute("style", "display: none");
+
+    buttonLock.setAttribute("style", "display: none");
+}); 
 
 function defaultSketch() {
     document.documentElement.style.setProperty("--default-grid-height", "100%");
@@ -99,7 +103,7 @@ function defaultSketch() {
     document.documentElement.style.setProperty("--grid-height", "100%");
     document.documentElement.style.setProperty("--grid-width", "100%");
 
-   } 
+   };
 
 
    // functions for color selection 
@@ -116,20 +120,23 @@ function generateGrids(){
         setDiv.style.cssText = `background-color: ${colorArray[i]}`;
     } 
     changeColor(); 
-}
+};
 
 function changeColor() {
-    const childDiv = document.querySelectorAll(".childStyle");
     const colorStyle = document.querySelectorAll(".colorStylediv"); 
     colorStyle.forEach((grid) => grid.addEventListener("click", () => {
         let color = grid.getAttribute("id");
         document.documentElement.style.setProperty("--default-color", color);
     })
 ) 
-}
+};
 
+// reset button 
 
+const buttonReset = document.querySelector(".buttonReset");
+buttonReset.addEventListener("click", () => changeSketch()); 
 
+//
 loadPage(); 
 
 
